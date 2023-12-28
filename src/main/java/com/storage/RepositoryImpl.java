@@ -1,6 +1,6 @@
 package com.storage;
 
-import com.entity.Product;
+import com.entity.products.Product;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;

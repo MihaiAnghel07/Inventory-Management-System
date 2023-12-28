@@ -1,10 +1,13 @@
-package com.entity;
+package com.entity.products;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Product {
+@Embeddable
+public abstract class Product implements Serializable {
     @Id
     private int id;
 

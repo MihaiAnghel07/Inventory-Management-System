@@ -1,9 +1,9 @@
 package com.demo;
 
-import com.entity.Meat;
-import com.entity.Potatoes;
-import com.entity.Sugar;
-import com.entity.Tomatoes;
+import com.entity.products.Meat;
+import com.entity.products.Potatoes;
+import com.entity.products.Sugar;
+import com.entity.products.Tomatoes;
 import com.storage.RepositoryImpl;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -45,21 +45,21 @@ public class Demo {
         meat.setId(1);
         meat.setAmount(meatAmount);
         meat.setTest("test");
-        entityManager.persist(meat);
-//        repository.add(meat, meatAmount, entityManager);
 
-//        Potatoes potatoes = new Potatoes();
-//        potatoes.setId(2);
-////        repository.add(potatoes, potatoesAmount, entityManager);
-//
-//        Sugar sugar = new Sugar();
-//        sugar.setId(3);
-////        repository.add(sugar, sugarAmount, entityManager);
-//
-//        Tomatoes tomatoes = new Tomatoes();
-//        tomatoes.setId(4);
-////        repository.add(tomatoes, tomatoesAmount, entityManager);
-//
+        repository.add(meat, meatAmount, entityManager);
+
+        Potatoes potatoes = new Potatoes();
+        potatoes.setId(2);
+        repository.add(potatoes, potatoesAmount, entityManager);
+
+        Sugar sugar = new Sugar();
+        sugar.setId(3);
+        repository.add(sugar, sugarAmount, entityManager);
+
+        Tomatoes tomatoes = new Tomatoes();
+        tomatoes.setId(4);
+        repository.add(tomatoes, tomatoesAmount, entityManager);
+
         entityManager.getTransaction().commit();
     }
 }
